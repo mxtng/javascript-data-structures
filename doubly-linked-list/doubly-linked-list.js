@@ -38,7 +38,7 @@ class DoublyLinkedList {
 	}
 
 	get(index) {
-		if (!!this.length || index >= this.length) return undefined;
+		if (!this.length || index >= this.length) return undefined;
 
 		let current, i;
 
