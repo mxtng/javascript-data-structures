@@ -73,4 +73,24 @@ class DoublyLinkedList {
 		}
 		return undefined;
 	}
+
+	remove(index) {
+		let removedNode = this.get(index);
+
+		if (!!removedNode) {
+			let prev, next;
+
+			prev = removedNode.previous;
+			next = removedNode.next;
+
+			prev.next = next;
+			next.prev = prev;
+
+			removedNode.previous = null;
+			removedNode.next = null;
+			this.length--;
+			return removedNode;
+		}
+		return undefined;
+	}
 }
