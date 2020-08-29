@@ -1,8 +1,12 @@
 // singly linked list
 
-// methods -> descriptions
+// method -> description
 // ===================================
 // add -> add new node to end of list
+// get -> retrieve node by index
+// set -> replace node data by index
+// remove -> remove node by index
+// reverse -> reverse list
 // ===================================
 
 class Node {
@@ -30,5 +34,21 @@ class SinglyLinkedList {
 			this.tail = newNode;
 		}
 		this.length++;
+	}
+
+	get(index) {
+		if (index < 0 || index >= this.length) return undefined;
+		if (index === 0) return this.head.data;
+		if (index === this.length - 1) return this.tail.data;
+
+		let i = 0;
+		let current = this.head;
+
+		while (i < index) {
+			current = current.next;
+			i++;
+		}
+
+		return !!current ? current.data : undefined;
 	}
 }
