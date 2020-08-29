@@ -40,7 +40,7 @@ class DoublyLinkedList {
 	}
 
 	get(index) {
-		if (!this.length || index >= this.length) return undefined;
+		if (index < 0 || index >= this.length) return undefined;
 
 		let current, i;
 
@@ -95,3 +95,4 @@ class DoublyLinkedList {
 		return undefined;
 	}
 }
+
