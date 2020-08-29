@@ -62,4 +62,14 @@ class DoublyLinkedList {
 
 		return !!current ? current.data : undefined;
 	}
+
+	set(index, data) {
+		let setNode = this.get(index);
+
+		if (!!setNode) {
+			setNode.data = data;
+			return setNode;
+		}
+		return undefined;
+	}
 }
