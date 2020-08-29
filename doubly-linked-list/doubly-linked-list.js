@@ -84,7 +84,7 @@ class DoublyLinkedList {
 			next = removedNode.next;
 
 			prev.next = next;
-			next.prev = prev;
+			next.previous = prev;
 
 			removedNode.previous = null;
 			removedNode.next = null;
