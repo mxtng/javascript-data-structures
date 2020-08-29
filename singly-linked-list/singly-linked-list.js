@@ -34,12 +34,13 @@ class SinglyLinkedList {
 			this.tail = newNode;
 		}
 		this.length++;
+		return this;
 	}
 
 	get(index) {
 		if (index < 0 || index >= this.length) return undefined;
-		if (index === 0) return this.head.data;
-		if (index === this.length - 1) return this.tail.data;
+		if (index === 0) return this.head;
+		if (index === this.length - 1) return this.tail;
 
 		let i = 0;
 		let current = this.head;
@@ -49,18 +50,18 @@ class SinglyLinkedList {
 			i++;
 		}
 
-		return !!current ? current.data : undefined;
+		return !!current ? current : undefined;
 	}
 
 	set(index, data) {
 		if (index < 0 || index >= this.length) return undefined;
 		if (index === 0) {
 			this.head.data = data;
-			return this.head.data;
+			return this.head;
 		}
 		if (index === this.length - 1) {
 			this.tail.data = data;
-			return this.tail.data;
+			return this.tail;
 		}
 
 		let i = 0;
@@ -72,6 +73,34 @@ class SinglyLinkedList {
 		}
 
 		current.data = data;
-		return current.data;
+		return current;
+	}
+
+	remove(index) {
+		if (index < 0 || index >= this.length) return undefined;
+
+		let previousNode, removedNode;
+
+		if (index === 0) {
+			removedNode = this.head;
+			this.head = this.head.next;
+			removedNode.next = null;
+			return removedNode;
+		}
+
+		if (index === this.length - 1) {
+			removedNode = this.tail;
+			this.tail = this.get(index - 1);
+			this.tail.next = removedNode.next;
+			return removedNode;
+		}
+
+		previousNode = this.get(index - 1);
+		removedNode = previousNode.next;
+		previousNode.next = removedNode.next;
+		removedNode.next = null;
+
+		this.length--;
+		return removedNode;
 	}
 }
