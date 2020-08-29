@@ -5,6 +5,8 @@
 // add -> add new node to end of list
 // get -> retrieve node by index
 // set -> replace node data by index
+// pop -> remove last node
+// shift -> remove first node
 // remove -> remove node by index
 // reverse -> reverse list
 // ===================================
@@ -28,8 +30,7 @@ class DoublyLinkedList {
 		const newNode = new Node(data);
 		if (!this.length) {
 			this.head = newNode;
-		} 
-		else {
+		} else {
 			this.tail.next = newNode;
 			newNode.previous = this.tail;
 		}
@@ -75,12 +76,51 @@ class DoublyLinkedList {
 		return undefined;
 	}
 
+	pop() {
+		if (!this.head) return undefined;
+
+		const removedNode = this.tail;
+
+		if (this.length === 1) {
+			this.head = null;
+			this.tail = null;
+		} else {
+			this.tail = removedNode.previous;
+			this.tail.next = null;
+			removedNode.previous = null;
+		}
+
+		this.length--;
+		return removedNode;
+	}
+
+	shift() {
+		if (!this.length) return undefined;
+
+		const removedNode = this.head;
+
+		if (this.length === 1) {
+			this.head = null;
+			this.tail = null;
+		} else {
+			this.head = removedNode.next;
+			this.head.previous = null;
+		}
+
+		removedNode.next = null;
+		this.length--;
+		return removedNode;
+	}
+
 	remove(index) {
-		let removedNode = this.get(index);
+		if (this.head === null || index < 0) return undefined;
+		if (index === 0) return this.shift();
+		if (index === this.length - 1) return this.pop();
+
+		let removedNode, prev, next;
+		removedNode = this.get(index);
 
 		if (!!removedNode) {
-			let prev, next;
-
 			prev = removedNode.previous;
 			next = removedNode.next;
 
@@ -95,4 +135,3 @@ class DoublyLinkedList {
 		return undefined;
 	}
 }
-
