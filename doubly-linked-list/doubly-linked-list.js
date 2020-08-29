@@ -60,7 +60,7 @@ class DoublyLinkedList {
 			}
 		}
 
-		return !!current ? current.data : undefined;
+		return !!current ? current : undefined;
 	}
 
 	set(index, data) {
