@@ -51,4 +51,27 @@ class SinglyLinkedList {
 
 		return !!current ? current.data : undefined;
 	}
+
+	set(index, data) {
+		if (index < 0 || index >= this.length) return undefined;
+		if (index === 0) {
+			this.head.data = data;
+			return this.head.data;
+		}
+		if (index === this.length - 1) {
+			this.tail.data = data;
+			return this.tail.data;
+		}
+
+		let i = 0;
+		let current = this.head;
+
+		while (i < index) {
+			current = current.next;
+			i++;
+		}
+
+		current.data = data;
+		return current.data;
+	}
 }
