@@ -26,9 +26,10 @@ class DoublyLinkedList {
 
 	add(data) {
 		const newNode = new Node(data);
-		if (!!this.length) {
+		if (!this.length) {
 			this.head = newNode;
-		} else {
+		} 
+		else {
 			this.tail.next = newNode;
 			newNode.previous = this.tail;
 		}
