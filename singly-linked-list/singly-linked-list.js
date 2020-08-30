@@ -103,4 +103,27 @@ class SinglyLinkedList {
 		this.length--;
 		return removedNode;
 	}
+
+	reverse() {
+		if (!this.length) return undefined;
+		if (this.length === 1) return this;
+
+		let currentNode, prev, next;
+
+		currentNode = this.head;
+		prev = null;
+
+		while (currentNode) {
+			next = currentNode.next;
+			currentNode.next = prev;
+			prev = currentNode;
+			currentNode = next;
+		}
+
+		this.tail = this.head;
+		this.head = prev;
+
+		return this;
+	}
 }
+
