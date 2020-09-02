@@ -2,4 +2,5 @@
 
 [Singly Linked List](/singly-linked-list/singly-linked-list.js)\
 [Doubly Linked List](/doubly-linked-list/doubly-linked-list.js)\
-[Stack](/stack/)
+[Stack](/stack/)\
+[Queue](/queue/)\
