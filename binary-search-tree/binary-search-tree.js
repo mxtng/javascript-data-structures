@@ -8,7 +8,7 @@
 // method -> description
 // ===================================
 // add -> add node
-// remove -> remove node
+// find -> remove node
 // lookup -> find node
 // ===================================
 
@@ -51,5 +51,21 @@ class BinarySearchTree {
 			}
 		}
 	}
-}
 
+	find(data) {
+		if (!this.root) return false;
+
+		let currentNode = this.root;
+
+		while (currentNode) {
+			if (data === currentNode.data) return true;
+
+			if (data < currentNode.data) {
+				currentNode = currentNode.left;
+			} else {
+				currentNode = currentNode.right;
+			}
+		}
+		return false;
+	}
+}
