@@ -4,4 +4,4 @@
 [Doubly Linked List](/doubly-linked-list/doubly-linked-list.js)\
 [Stack](/stack/)\
 [Queue](/queue/)\
-[Binary Search Tree](/binaray-search-tree/binary-search-tree.js)
+[Binary Search Tree](/binary-search-tree/binary-search-tree.js)
