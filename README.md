@@ -1,5 +1,5 @@
-# JavaScript Data Structures
- A collection of javascript data structures practice 
+# Javascript Data Structures
+ A collection of javascript data structure notes
 
 | Data Structure |
 | ------ | 
