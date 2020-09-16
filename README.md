@@ -1,10 +1,14 @@
-# Javascript Data Structures
- A collection of javascript data structure notes
+## Javascript Data Structures & Algorithms
 
-| Data Structure |
-| ------ | 
-| [Singly Linked List](/singly-linked-list/singly-linked-list.js) |
-| [Doubly Linked List](/doubly-linked-list/doubly-linked-list.js) |
-| [Stack](/stack/) |
-| [Queue](/queue/) |
-| [Binary Search Tree](/binary-search-tree/binary-search-tree.js) |
+ A repository of javascript data structure & algorithms practice notes.
+ 
+ ### Data Structures
+ * [Singly Linked List](/data-structures/singly-linked-list/singly-linked-list.js)
+* [Doubly Linked List](/data-structures/doubly-linked-list/doubly-linked-list.js) 
+* [Stack](/data-structures/data-structures/data-structures/stack/)
+* [Queue](/data-structures/data-structures/queue/) 
+* [Binary Search Tree](/data-structures/binary-search-tree/binary-search-tree.js) 
+
+
+ ### Algorithms
+* [String Reversal](/algorithms/stringreversal/stringreversal.js)
